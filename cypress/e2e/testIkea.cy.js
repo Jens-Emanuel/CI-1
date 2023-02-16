@@ -1,6 +1,8 @@
 describe('First tests', () => {
 
 
+  
+
 
   it('Asserting adding to basket and that item "billy" comes in on the right price', () => {
     //Visit website
@@ -12,7 +14,7 @@ describe('First tests', () => {
     cy.get('.search-field__input').type('billy {ENTER}')
     //add to basket
     cy.get('.plp-product-list__products > :nth-child(1) > .plp-product-list__fragment > :nth-child(1) > .pip-product-compact > .pip-product-compact__bottom-wrapper > .pip-product-compact__buttons-container > .pip-btn--icon-emphasised').click()
-    cy.wait(1000)
+    cy.wait(2000)
 
     //get basket
     cy.scrollTo('top')
