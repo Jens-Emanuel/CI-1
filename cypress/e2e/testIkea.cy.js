@@ -1,8 +1,6 @@
 describe('First tests', () => {
 
 
-  
-
 
   it('Asserting adding to basket and that item "billy" comes in on the right price', () => {
     //Visit website
