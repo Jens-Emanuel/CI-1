@@ -33,6 +33,15 @@ describe('First tests', () => {
     cy.wait(500)
     //Accept all cookies
     cy.get('#onetrust-accept-btn-handler').click()
+
+    cy.get('.hnf-location__container > .hnf-location__btn-wrapper--postalcode > .hnf-location__postalcode > .hnf-btn__inner').click()
+
+    cy.get('#hnf-txt-postalcodepicker-postcode').clear()
+    cy.get('#hnf-txt-postalcodepicker-postcode').type('22221')
+    cy.get('#hnf-btn-postalcodepicker-use').click()
+    cy.get('.hnf-location__container > .hnf-location__btn-wrapper--postalcode > .hnf-location__postalcode > .hnf-btn__inner > .hnf-btn__label')
+      .should('contain', 22221)
+
     
     
     })  
