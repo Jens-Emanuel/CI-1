@@ -44,7 +44,29 @@ describe('First tests', () => {
 
     
     
-    })  
+  })
+  
+  it('Test 3', () => {
+    //Visit website
+    cy.visit('https://www.ikea.se')
+    cy.wait(500)
+    //Accept all cookies
+    cy.get('#onetrust-accept-btn-handler').click()
+
+    cy.get('.search-field__input').type('konstfull {ENTER}')
+    cy.get('.plp-product-list__products > :nth-child(1) > .plp-product-list__fragment > :nth-child(1) > .pip-product-compact > .pip-product-compact__bottom-wrapper > .pip-product-compact__buttons-container > .pip-btn--icon-tertiary')
+      .click()
+    cy.wait(2000)
+    cy.scrollTo('top', { easing: 'linear' })
+    cy.get('.hnf-header__shopping-list-link > .hnf-btn > .hnf-btn__inner').click()
+    cy.get('.ListHeader_listItemCount__3BgoT').should('contain', 1)
+
+
+
+
+
+  })
+    
 
 
 })
