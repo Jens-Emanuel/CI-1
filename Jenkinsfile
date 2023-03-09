@@ -2,6 +2,8 @@ pipeline{
 
     agent any
 
+    tools {nodejs "Node19"}
+
     parameters{
         string(name:'SPEC', defaultValue: "cypress/e2e", description: "Enter the script path that you want to execute")
         choice(name:'BROWSER',choices: ['chrome', 'edge','firefox'], description: "Pick the browser you would like to execute your scripts")
