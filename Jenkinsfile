@@ -17,10 +17,16 @@ pipeline{
                 echo 'Building the application'
             }
         }
-        stage('Testing'){
+        stage('Dependencies'){
             steps{
                 bat "npm i"
+                
+            }
+
+        stage('Tests'){
+            steps{
                 bat "npx cypress run --browser ${BROWSER} --spec ${SPEC}"
+                bat "npm run cypress"
             }
         }
         stage('Deploying'){
