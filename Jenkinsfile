@@ -22,6 +22,7 @@ pipeline{
                 bat "npm i"
                 
             }
+        }
 
         stage('Tests'){
             steps{
@@ -29,16 +30,17 @@ pipeline{
                 bat "npm run cypress"
             }
         }
+
         stage('Deploying'){
             steps{
                 echo "Deploy the application"
             }
         }
-    }
 
    // post{
        // always{
 
       //  }
    // }
+    }
 }
