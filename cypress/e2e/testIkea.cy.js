@@ -1,6 +1,6 @@
 //const { beforeEach } = require("mocha")
 
-describe('First tests', () => {
+describe('My Ikea tests', () => {
 
   
 
