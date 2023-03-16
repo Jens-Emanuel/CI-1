@@ -39,10 +39,5 @@ pipeline{
             }
         }
 
-        post('Posting something'){
-            always{
-
-            }
-        }
     }
 }
