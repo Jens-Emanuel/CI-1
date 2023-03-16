@@ -1,48 +1,37 @@
-pipeline{
-
+pipeline {
     agent any
 
-    tools {nodejs "Node19"}
+    tools {nodejs "node"}
 
-    parameters{
-        string(name:'SPEC', defaultValue: "cypress/e2e", description: "Enter the script path that you want to execute")
-        choice(name:'BROWSER',choices: ['chrome', 'edge','firefox'], description: "Pick the browser you would like to execute your scripts")
+    environment {
+        CHROME_BIN = '/bin/google-chrome'
     }
 
-    options{
-        ansiColor('xterm')
-    }
-
-    stages{
-        stage('Building'){
-            steps{
-                echo 'Building the application'
+    stages {
+        stage('Dependencies') {
+            steps {
+                sh 'npm i'
             }
         }
-        stage('Dependencies'){
-            steps{
-                bat "npm i"
-                
+        stage('Build') {
+            steps {
+                sh 'npm run build'
             }
         }
-
-        stage('Tests'){
-            steps{
-                bat "npx cypress run --browser ${BROWSER} --spec ${SPEC}"
-                bat "npm run cypress"
+        stage('Unit Tests') {
+            steps {
+                sh 'npm run test'
             }
         }
-
-        stage('Deploying'){
-            steps{
-                echo "Deploy the application"
+        stage('e2e Tests') {
+            steps {
+                sh 'npm run cypress:ci'
             }
         }
-
-   // post{
-       // always{
-
-      //  }
-   // }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
     }
 }
