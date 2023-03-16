@@ -1,7 +1,5 @@
 *node_modules
-*cypress.config.js
+
 *fixtures
 *support
 *videos
-*package.json
-*package-lock.json
