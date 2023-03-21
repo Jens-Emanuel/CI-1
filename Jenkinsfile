@@ -5,7 +5,7 @@ pipeline{
     tools {nodejs "Node19"}
 
     parameters{
-        string(name:'SPEC', defaultValue: "cypress/e2e", description: "Enter the script path that you want to execute")
+        string(name:'SPEC', defaultValue: "cypress/e2e/*.cy.js", description: "Enter the script path that you want to execute")
         choice(name:'BROWSER',choices: ['chrome', 'edge','firefox'], description: "Pick the browser you would like to execute your scripts")
     }
 
@@ -18,18 +18,13 @@ pipeline{
             steps{
                 echo 'Building the application'
             }
-        }
-        stage('Dependencies'){
-            steps{
-                bat "npm i"
-                
-            }
-        }
+        
 
         stage('Tests'){
             steps{
-                bat "npx cypress run --browser ${BROWSER} --spec ${SPEC}"
-                bat "npm cypress run"
+                bat "npm i"
+                bat "npx cypress run --headless --browser ${BROWSER} --spec ${SPEC}"
+                
             }
         }
 
