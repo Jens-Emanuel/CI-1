@@ -19,7 +19,7 @@ pipeline{
                 echo 'Building the application'
             }
         
-
+        }
         stage('Tests'){
             steps{
                 bat "npm i"
