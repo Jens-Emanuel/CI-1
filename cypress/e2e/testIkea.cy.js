@@ -77,7 +77,7 @@ describe('My Ikea tests', () => {
 
   })
 
-  it('Testar Nya produkter länk på startsidan', () => {
+  it('Testar erbjudanden', () => {
     //Visit website
     cy.visit('https://www.ikea.se')
     cy.wait(500)
@@ -86,7 +86,7 @@ describe('My Ikea tests', () => {
 
     cy.get('.hnf-header__hamburger > .hnf-btn > .hnf-btn__inner').click()
     cy.get('.hnf-menu__nav__main > :nth-child(1) > .hnf-link').click()
-    cy.get('.c1m1sl8e').should('contain', 'nya produkter')
+    cy.get('.c1m1sl8e').should('contain', 'IKEA Family')
 
   })
 
