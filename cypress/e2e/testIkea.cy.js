@@ -14,6 +14,7 @@ describe('My Ikea tests', () => {
     //search for item
     cy.get('.search-field__input').type('billy {ENTER}')
     //add to basket
+    cy.wait(2000)
     cy.get('.plp-product-list__products > :nth-child(1) > .plp-product-list__fragment > :nth-child(1) > .pip-product-compact > .pip-product-compact__bottom-wrapper > .pip-product-compact__buttons-container > .pip-btn--icon-emphasised').click()
     cy.wait(2000)
 
@@ -22,6 +23,7 @@ describe('My Ikea tests', () => {
     cy.wait(2000)
     cy.get('.hnf-header__shopping-cart-link > .hnf-btn > .hnf-btn__inner').click()
       .should('have.length',1);
+    cy.wait(500)
     cy.get('.cart-ingka-price__integer')
       .should('contain', 599)
 
@@ -54,6 +56,7 @@ describe('My Ikea tests', () => {
     cy.get('#onetrust-accept-btn-handler').click()
 
     cy.get('.search-field__input').type('konstfull {ENTER}')
+    cy.wait(3000)
     cy.get('.plp-product-list__products > :nth-child(1) > .plp-product-list__fragment > :nth-child(1) > .pip-product-compact > .pip-product-compact__bottom-wrapper > .pip-product-compact__buttons-container > .pip-btn--icon-tertiary')
       .click()
     cy.wait(2000)
