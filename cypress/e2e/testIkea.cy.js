@@ -4,7 +4,7 @@ describe('My Ikea tests', () => {
 
   
 
-  it('Asserting adding to basket and that item "billy" comes in on the right price', () => {
+  it('1Asserting adding to basket and that item "billy" comes in on the right price', () => {
     //Visit website
     cy.visit('https://www.ikea.se')
     cy.wait(500)
@@ -27,7 +27,7 @@ describe('My Ikea tests', () => {
 
   })
     
-  it('Test 2', () => {
+  it('2Testing postalcode change (flaky)', () => {
     //Visit website
     cy.visit('https://www.ikea.se')
     cy.wait(500)
@@ -62,10 +62,35 @@ describe('My Ikea tests', () => {
     cy.get('.ListHeader_listItemCount__3BgoT').should('contain', 1)
 
 
+  })
 
+  it('4Testar Nya produkter länk på startsidan', () => {
+    //Visit website
+    cy.visit('https://www.ikea.se')
+    cy.wait(500)
+    //Accept all cookies
+    cy.get('#onetrust-accept-btn-handler').click()
+
+    cy.get('.pub__teaser__info-container > .pub__btn > .pub__btn__inner > .pub__btn__label').click()
+    cy.get('.plp-page-title__title').should('contain, "Nya produkter"')
 
 
   })
+
+  it('Testar Nya produkter länk på startsidan', () => {
+    //Visit website
+    cy.visit('https://www.ikea.se')
+    cy.wait(500)
+    //Accept all cookies
+    cy.get('#onetrust-accept-btn-handler').click()
+
+    cy.get('.hnf-header__hamburger > .hnf-btn > .hnf-btn__inner').click()
+    cy.get('.hnf-menu__nav__main > :nth-child(1) > .hnf-link').click()
+    cy.get('.c1m1sl8e').should('contain', 'nya produkter')
+
+  })
+
+  
     
 
 
