@@ -72,7 +72,7 @@ describe('My Ikea tests', () => {
     cy.get('#onetrust-accept-btn-handler').click()
 
     cy.get('.pub__teaser__info-container > .pub__btn > .pub__btn__inner > .pub__btn__label').click()
-    cy.get('.plp-page-title__title').should('contain, "Nya produkter"')
+    cy.get('.plp-page-title__title').should('contain', 'Nya produkter')
 
 
   })
