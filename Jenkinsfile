@@ -22,7 +22,7 @@ pipeline{
         }
         stage('Tests'){
             steps{
-                bat "npm i"
+                bat "npm i 12.7.0"
                 bat "npx cypress run --headless --browser ${BROWSER} --spec ${SPEC}"
                 
             }
