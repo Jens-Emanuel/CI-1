@@ -74,22 +74,23 @@ describe('My Ikea tests', () => {
     //Accept all cookies
     cy.get('#onetrust-accept-btn-handler').click()
 
-    cy.get('.pub__teaser__info-container > .pub__btn > .pub__btn__inner > .pub__btn__label').click()
+    cy.get('.hnf-header__hamburger > .hnf-btn > .hnf-btn__inner').click()
+    cy.get('.hnf-menu__nav__main > :nth-child(1) > .hnf-link').click()
+    cy.get('[aria-hidden="false"] > .hnf-menu__nav2__main > :nth-child(1) > .hnf-link').click()
     cy.get('.plp-page-title__title').should('contain', 'Nya produkter')
 
 
   })
 
-  it('Testar erbjudanden', () => {
+  it('Testar alla erbjudanden på startsidan', () => {
     //Visit website
     cy.visit('https://www.ikea.se')
     cy.wait(500)
     //Accept all cookies
     cy.get('#onetrust-accept-btn-handler').click()
 
-    cy.get('.hnf-header__hamburger > .hnf-btn > .hnf-btn__inner').click()
-    cy.get('.hnf-menu__nav__main > :nth-child(1) > .hnf-link').click()
-    cy.get('.c1m1sl8e').should('contain', 'IKEA Family')
+    cy.get('.pub__teaser__info-container > .pub__btn > .pub__btn__inner > .pub__btn__label')
+    cy.get('.cwjkbn0').should('contain', 'IKEA Family')
 
   })
 
