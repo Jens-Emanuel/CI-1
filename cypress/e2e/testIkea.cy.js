@@ -89,7 +89,7 @@ describe('My Ikea tests', () => {
     //Accept all cookies
     cy.get('#onetrust-accept-btn-handler').click()
 
-    cy.get('.pub__teaser__info-container > .pub__btn > .pub__btn__inner > .pub__btn__label')
+    cy.get('.pub__teaser__info-container > .pub__btn > .pub__btn__inner > .pub__btn__label').click()
     cy.get('.cwjkbn0').should('contain', 'IKEA Family')
 
   })
