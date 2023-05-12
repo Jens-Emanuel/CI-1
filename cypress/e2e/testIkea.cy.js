@@ -29,7 +29,7 @@ describe('My Ikea tests', () => {
 
   })
     
-  it('2Testing postalcode change (flaky)', () => {
+  it('2Testing postalcode change', () => {
     //Visit website
     cy.visit('https://www.ikea.se')
     cy.wait(500)
@@ -48,7 +48,7 @@ describe('My Ikea tests', () => {
     
   })
   
-  it('Test 3', () => {
+  it('3Testing customer travel and that productholder contains object', () => {
     //Visit website
     cy.visit('https://www.ikea.se')
     cy.wait(500)
@@ -67,7 +67,7 @@ describe('My Ikea tests', () => {
 
   })
 
-  it('4Testar Nya produkter länk på startsidan', () => {
+  it('4Testar Nya produkter länk ', () => {
     //Visit website
     cy.visit('https://www.ikea.se')
     cy.wait(500)
@@ -82,7 +82,7 @@ describe('My Ikea tests', () => {
 
   })
 
-  it('Testar alla erbjudanden på startsidan', () => {
+  it('5Testar alla erbjudanden på startsidan', () => {
     //Visit website
     cy.visit('https://www.ikea.se')
     cy.wait(500)
