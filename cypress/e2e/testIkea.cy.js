@@ -48,7 +48,7 @@ describe('My Ikea tests', () => {
     
   })
   
-  it('3Testing customer travel and that productholder contains object', () => {
+  it('3Testing customer travel and the favourite function', () => {
     //Visit website
     cy.visit('https://www.ikea.se')
     cy.wait(500)
